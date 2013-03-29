@@ -1,11 +1,11 @@
 Summary:	A quick previewer for Nautilus
 Name:		sushi
-Version:	3.6.1
-Release:	1
+Version:	3.8.0
+Release:	2
 License:	GPLv2+ with exceptions
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	452d3935c3276fe1c61eb5a6cd5df847
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/sushi/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	8efffd6e0da104543e8b1b08bb67b73c
 URL:		https://live.gnome.org/ThreePointOne/Features/FilePreviewing
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -22,6 +22,11 @@ BuildRequires:	libmusicbrainz5-devel
 BuildRequires:	libtool
 BuildRequires:	pkg-config
 Requires(post,postun): glib-gio-gsettings
+Requires:	gstreamer-plugins-base
+Requires:	gstreamer-plugins-good
+Suggests:	gstreamer-libav
+Suggests:	gstreamer-plugins-bad
+Suggests:	gstreamer-plugins-ugly
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/sushi
